@@ -1,5 +1,3 @@
-#' task 1: loading the data using DropletUtils, retaining only the protein coding genes in #' the data
-#'
 task1_load_and_filter_data <- function(gtf_path, matrix_zip_path, matrix_extract_dir) {
   # setting the working directory
   # extracting and loading the datasets provvided
