@@ -13,10 +13,10 @@ install.packages(c("ggplot2", "stringr", "SingleCellExperiment", "DropletUtils",
 ## setting the working directory
 
 ## extracting and loading the datasets provvided
-gtf_path <-"C:/Users/Utente/Desktop/magistrale/programming/exam/Homo_sapiens.GRCh38.111.gtf.gz"
+gtf_path <-"C:/Users/Utente/Desktop/magistrale/programming/exam/molecular/Homo_sapiens.GRCh38.111.gtf.gz"
 gtf <- read.delim(gzfile(gtf_path), header = FALSE, comment.char = "#")
 
-unzip("C:/Users/Utente/Desktop/magistrale/programming/exam/filtered_feature_bc_matrix.zip",exdir = "C:/Users/Utente/Desktop/magistrale/programming/exam/filtered_feature_bc_matrix")
+unzip("C:/Users/Utente/Desktop/magistrale/programming/exam/molecular/filtered_feature_bc_matrix.zip",exdir = "C:/Users/Utente/Desktop/magistrale/programming/exam/molecular/filtered_feature_bc_matrix")
 
 ## installing DropletUtils to extract the features
 if (!requireNamespace("DropletUtils", quietly = TRUE)) {
@@ -25,7 +25,7 @@ if (!requireNamespace("DropletUtils", quietly = TRUE)) {
 library(DropletUtils)
 
 ## setting the path to matrix folder to read the features
-matrix_dir <-"C:/Users/Utente/Desktop/magistrale/programming/exam/filtered_feature_bc_matrix/filtered_feature_bc_matrix"
+matrix_dir <-"C:/Users/Utente/Desktop/magistrale/programming/exam/molecular/filtered_feature_bc_matrix/filtered_feature_bc_matrix"
 sce <- read10xCounts(matrix_dir)
 
 ## checking everything
@@ -35,7 +35,7 @@ sce
 # 1.Gene Annotation: Identify and retain only the protein-coding genesfrom the dataset, based on the GTF file.
 
 ## creating a table for gtf
-gtf <-read.table(gzfile("C:/Users/Utente/Desktop/magistrale/programming/exam/Homo_sapiens.GRCh38.111.gtf.gz"),
+gtf <-read.table(gzfile("C:/Users/Utente/Desktop/magistrale/programming/exam/molecular/Homo_sapiens.GRCh38.111.gtf.gz"),
 header = FALSE, sep = "\t", comment.char = "#", stringsAsFactors =
 FALSE, quote = "")
 
